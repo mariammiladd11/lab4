@@ -46,8 +46,8 @@ public class EmployeeUserDatabase {
             String name = parts[1].trim();               
             String email = parts[2].trim();  
             String address = parts[3].trim();
-            int phone = Integer.parseInt(parts[3].trim());
-            return new EmployeeUser(id, name, email, address);
+            String phone = parts[3].trim();
+            return new EmployeeUser(id, name, email, address,phone);
         }
         return null;
     }

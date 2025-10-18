@@ -10,6 +10,8 @@ package lab4.newpackage;
  */
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class AdminRole extends UserRole {
     private EmployeeUserDatabase database;
@@ -23,7 +25,7 @@ public class AdminRole extends UserRole {
     
     public void addEmployee(String employeeId, String name, String email, String address, String phoneNumber) throws IOException {
         int phone = Integer.parseInt(phoneNumber);
-        EmployeeUser newEmployee = new EmployeeUser(employeeId, name, email, address);
+        EmployeeUser newEmployee = new EmployeeUser(employeeId, name, email, address,phoneNumber);
         database.insertRecord(newEmployee);
         database.writeToFile();
         System.out.println("Employee added successfully: " + name);
@@ -52,8 +54,12 @@ public class AdminRole extends UserRole {
     // Polymorphic override from UserRole
     @Override
     public void logout() {
-        database.writeToFile();
-        System.out.println("Admin logged out. All data saved successfully.");
+        try {
+            database.writeToFile();
+            System.out.println("Admin logged out. All data saved successfully.");
+        } catch (IOException ex) {
+            
+        }
     }
 }
 

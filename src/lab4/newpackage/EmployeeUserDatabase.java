@@ -98,6 +98,7 @@ public class EmployeeUserDatabase {
             fw.write(e.toCSV() + "\n");
         }
         fw.close();
+        System.out.println("hi");
     }
 }
            

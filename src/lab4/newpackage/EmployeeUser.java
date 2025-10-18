@@ -9,5 +9,8 @@ package lab4.newpackage;
  * @author CYBER-TECH
  */
 class EmployeeUser {
+
+    EmployeeUser(String id, String name, String role, double salary) {
+    }
     
 }

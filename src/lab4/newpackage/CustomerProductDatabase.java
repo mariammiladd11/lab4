@@ -36,7 +36,7 @@ public class CustomerProductDatabase {
             records.add(cp);
         }
         s.close();
-        System.out.println("hi");
+        
     }
     public CustomerProduct createRecordFrom(String line) {
         String[] parts = line.split(",");

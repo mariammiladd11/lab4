@@ -8,6 +8,17 @@ package lab4.newpackage;
  *
  * @author CYBER-TECH
  */
-public class UserRole {
+public abstract class UserRole {
+    protected String roleName;
+
+    public UserRole(String roleName) {
+        this.roleName = roleName;
+    }
+
+    public String getRoleName() {
+        return roleName;
+    }
+
     
+    public abstract void logout();
 }

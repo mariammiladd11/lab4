@@ -23,7 +23,7 @@ public class AdminRole extends UserRole {
     
     public void addEmployee(String employeeId, String name, String email, String address, String phoneNumber) throws IOException {
         int phone = Integer.parseInt(phoneNumber);
-        EmployeeUser newEmployee = new EmployeeUser(employeeId, name, email, address, phone);
+        EmployeeUser newEmployee = new EmployeeUser(employeeId, name, email, address);
         database.insertRecord(newEmployee);
         database.writeToFile();
         System.out.println("Employee added successfully: " + name);

@@ -17,7 +17,9 @@ public class ProductDatabase extends Database<Product> {
         super(filename);
     }
 
+    @Override
     public Product createRecordFrom(String line) {
+        System.out.println(line);
         String[] splitProduct = line.split(",");
         String id = splitProduct[0];
         String name = splitProduct[1];
@@ -28,12 +30,24 @@ public class ProductDatabase extends Database<Product> {
         return new Product(id, name, manufacturer, supplier, quantity, price);
     }
 
+    @Override
     public String getKey(Product record) {
         return record.getSearchKey();
     }
 
+    @Override
     public String lineRepresentation(Product record) {
         return record.lineRepresentation();
+    }
+
+    @Override
+    public String getSearchKey() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void logout() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
 

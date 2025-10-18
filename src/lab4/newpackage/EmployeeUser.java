@@ -4,6 +4,8 @@
  */
 package lab4.newpackage;
 
+import java.time.format.DateTimeFormatter;
+
 /**
  *
  * @author CYBER-TECH
@@ -71,7 +73,10 @@ public class EmployeeUser {
     return employeeID;
 }
 
-
+ public String getSearchKey() {
+        
+        return employeeID;
+    }
    
     
     

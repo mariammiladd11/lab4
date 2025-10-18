@@ -27,6 +27,20 @@ import java.util.Scanner;
     public abstract T createRecordFrom(String line);
     public abstract String getKey(T record);
     public abstract String lineRepresentation(T record);
+    public abstract  String getSearchKey();
+    
+    
+    
+     protected String roleName;
+
+   
+
+    public String getRoleName() {
+        return roleName;
+    }
+
+    
+    public abstract void logout();
 
     public void readFromFile() throws FileNotFoundException {
         records = new ArrayList<>();

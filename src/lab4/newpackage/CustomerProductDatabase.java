@@ -44,7 +44,7 @@ public class CustomerProductDatabase {
         String customerSSN = parts[0];
         String productID = parts[1];
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("DD-MM-YYYY");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         LocalDate purchaseDate = LocalDate.parse(parts[2], formatter);
 
         boolean paid = Boolean.parseBoolean(parts[3]);

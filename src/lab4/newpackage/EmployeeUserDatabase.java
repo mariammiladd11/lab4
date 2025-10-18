@@ -22,6 +22,7 @@ public class EmployeeUserDatabase {
 
     public EmployeeUserDatabase(String filename) {   // constructor
         this.filename = filename;
+        records=new ArrayList<>();
     }
     
     public void readFromFile() throws FileNotFoundException, IOException {    // bey read el line mn el file we yeb3at el line le create function

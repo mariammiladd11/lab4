@@ -10,10 +10,8 @@ package lab4.newpackage;
  */
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-public class AdminRole extends UserRole {
+public class AdminRole extends Database {
     private EmployeeUserDatabase database;
 
     public AdminRole() throws IOException {
@@ -24,7 +22,7 @@ public class AdminRole extends UserRole {
 
     
     public void addEmployee(String employeeId, String name, String email, String address, String phoneNumber) throws IOException {
-        int phone = Integer.parseInt(phoneNumber);
+        
         EmployeeUser newEmployee = new EmployeeUser(employeeId, name, email, address,phoneNumber);
         database.insertRecord(newEmployee);
         database.writeToFile();
@@ -60,6 +58,26 @@ public class AdminRole extends UserRole {
         } catch (IOException ex) {
             
         }
+    }
+
+    @Override
+    public Object createRecordFrom(String line) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public String getKey(Object record) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public String lineRepresentation(Object record) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public String getSearchKey() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
 

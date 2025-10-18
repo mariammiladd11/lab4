@@ -20,11 +20,14 @@ public class EmployeeRole {
     private ProductDatabase productsDatabase;
     private CustomerProductDatabase customerProductDatabase;
 
-    public EmployeeRole(String productsFile, String customerProductsFile) {
-        this.productsDatabase = new ProductDatabase(productsFile);
-        this.customerProductDatabase = new CustomerProductDatabase(customerProductsFile);
+    public EmployeeRole() throws FileNotFoundException {
+           productsDatabase = new ProductDatabase("product.txt");
+           customerProductDatabase = new CustomerProductDatabase("customer.txt");
+        productsDatabase.readFromFile();
+        customerProductDatabase.readFromFile();
     }
 
+    
    
    public void addProduct(String productID, String productName, String manufacturerName, 
                            String supplierName, int quantity, double price) throws FileNotFoundException {

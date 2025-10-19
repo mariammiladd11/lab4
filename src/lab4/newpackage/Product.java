@@ -8,7 +8,7 @@ package lab4.newpackage;
  *
  * @author MALAK
  */
-public class Product {
+public class Product implements Item{
     private String productID;
     private String productName;
     private String manufacturerName;

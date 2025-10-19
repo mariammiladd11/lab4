@@ -4,7 +4,6 @@ package lab4.newpackage;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
 /**
  *
  * @author sarahkhaled
@@ -15,20 +14,8 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+public abstract class Database<T extends Item> {
 
-
-
-
-
-
-
-
-
-
-
-
-
-    public abstract class Database<T> {
     protected ArrayList<T> records;
     protected String filename;
 
@@ -38,21 +25,13 @@ import java.util.Scanner;
     }
 
     public abstract T createRecordFrom(String line);
-    public abstract String getKey(T record);
-    public abstract String lineRepresentation(T record);
-    public abstract  String getSearchKey();
-    
-    
-    
-     protected String roleName;
 
-   
+    
+    protected String roleName;
+
     public String getRoleName() {
         return roleName;
     }
-
-    
-    public abstract void logout();
 
     public void readFromFile() throws FileNotFoundException {
         records = new ArrayList<>();
@@ -73,7 +52,7 @@ import java.util.Scanner;
 
     public boolean contains(String key) {
         for (T record : records) {
-            if (getKey(record).equals(key)) {
+            if (record.getSearchKey().equals(key)) {
                 return true;
             }
         }
@@ -82,7 +61,7 @@ import java.util.Scanner;
 
     public T getRecord(String key) {
         for (T record : records) {
-            if (getKey(record).equals(key)) {
+            if (record.getSearchKey().equals(key)) {
                 return record;
             }
         }
@@ -90,7 +69,7 @@ import java.util.Scanner;
     }
 
     public void insertRecord(T record) {
-        if (contains(getKey(record))) {
+        if (contains(record.getSearchKey())) {
             System.out.println("Record with the same key already exists.");
             return;
         }
@@ -102,7 +81,7 @@ import java.util.Scanner;
         boolean found = false;
 
         for (T record : records) {
-            if (!getKey(record).equals(key)) {
+            if (!record.getSearchKey().equals(key)) {
                 newList.add(record);
             } else {
                 found = true;
@@ -111,19 +90,19 @@ import java.util.Scanner;
 
         records = newList;
 
-        if (found)
+        if (found) {
             System.out.println("Record with key " + key + " deleted.");
-        else
+        } else {
             System.out.println("Record not found.");
+        }
     }
 
     public void saveToFile() throws FileNotFoundException {
         PrintWriter pw = new PrintWriter(filename);
         for (T record : records) {
-            pw.println(lineRepresentation(record));
+            pw.println(record.lineRepresentation());
         }
         pw.close();
         System.out.println("Records saved successfully to " + filename);
     }
 }
-

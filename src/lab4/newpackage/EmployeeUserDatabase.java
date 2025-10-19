@@ -4,63 +4,42 @@
  */
 package lab4.newpackage;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  *
  * @author CYBER-TECH
  */
-public class EmployeeUserDatabase  {
-    
-   private String filename;
-   private ArrayList<EmployeeUser> records;  
+public class EmployeeUserDatabase extends Database<EmployeeUser> {
+
+    private String filename;
+  
 
     public EmployeeUserDatabase(String filename) {   // constructor
-        this.filename = filename;
-        records=new ArrayList<>();
+        super(filename);
+       
     }
-    
-   
-    public void readFromFile() throws FileNotFoundException, IOException {    // bey read el line mn el file we yeb3at el line le create function
-        
-        FileReader fr = new FileReader(filename);
-        Scanner s = new Scanner(fr);
-        while (s.hasNextLine()) {
-            String line = s.nextLine();
-            EmployeeUser employee = createRecordFrom(line);
-            if (employee != null) {
-                records.add(employee);
-            }
-        }
-        fr.close();
-    }
-    
-    
-     public EmployeeUser createRecordFrom(String line) {   //bey create object el howa new employee 
+
+
+    public EmployeeUser createRecordFrom(String line) {   //bey create object el howa new employee 
         String[] parts = line.split(",");
         if (parts.length >= 4) {
             String id = parts[0].trim();
-            String name = parts[1].trim();               
-            String email = parts[2].trim();  
+            String name = parts[1].trim();
+            String email = parts[2].trim();
             String address = parts[3].trim();
             String phone = parts[3].trim();
-            return new EmployeeUser(id, name, email, address,phone);
+            return new EmployeeUser(id, name, email, address, phone);
         }
         return null;
     }
 
-    
-    public ArrayList<EmployeeUser> returnAllRecords() {   
+    public ArrayList<EmployeeUser> returnAllRecords() {
         return records;
     }
 
-    
-     public boolean contains(String key) {  
+    public boolean contains(String key) {
         for (EmployeeUser e : records) {
             if (e.getEmployeeId().equals(key)) {
                 return true;
@@ -69,17 +48,15 @@ public class EmployeeUserDatabase  {
         return false;
     }
 
-
-    
-  public EmployeeUser getRecord(String key) { // return el employee el id beta3o howa howa el key
-    for (int i = 0; i < records.size(); i++) {
-        EmployeeUser e = records.get(i);
-        if (e.getEmployeeId().equals(key)) {
-            return e;
+    public EmployeeUser getRecord(String key) { // return el employee el id beta3o howa howa el key
+        for (int i = 0; i < records.size(); i++) {
+            EmployeeUser e = records.get(i);
+            if (e.getEmployeeId().equals(key)) {
+                return e;
+            }
         }
+        return null;
     }
-    return null;
-}
 
     public void insertRecord(EmployeeUser record) { // law aslan mafish id lel user da a3melo add 
         if (!contains(record.getEmployeeId())) {
@@ -96,32 +73,6 @@ public class EmployeeUserDatabase  {
         return false;
     }
 
-    
-    public void writeToFile() throws FileNotFoundException, IOException { 
-    FileWriter fw = new FileWriter(filename);
 
-    for (int i = 0; i < records.size(); i++) {
-        EmployeeUser e = records.get(i);
-        fw.write(e.getEmployeeId() + "," + e.getName() + "," + e.getEmail() + "," + e.getAddress() + "," + e.getEmail()+ "\n");
-    }
-
-    fw.close();
-}
-
-    public String getKey(EmployeeUser record) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public String lineRepresentation(EmployeeUser record) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public String getSearchKey() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public void logout() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
 }

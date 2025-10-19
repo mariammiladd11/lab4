@@ -4,14 +4,13 @@
  */
 package lab4.newpackage;
 
-import java.time.format.DateTimeFormatter;
-
 /**
  *
  * @author CYBER-TECH
  */
-public class EmployeeUser implements Item{
-     private String employeeID;
+public class EmployeeUser implements Item {
+
+    private String employeeID;
     private String Name;
     private String Email;
     private String Address;
@@ -24,8 +23,6 @@ public class EmployeeUser implements Item{
         this.Address = Address;
         this.phoneNumber = phoneNumber;
     }
-
-    
 
     public void setEmployeeID(String employeeID) {
         this.employeeID = employeeID;
@@ -63,28 +60,19 @@ public class EmployeeUser implements Item{
         this.phoneNumber = phoneNumber;
     }
 
-   
-    
-     @Override
-    public String lineRepresentation(){
-        return employeeID+ "," + Name + "," + Email + "," + Address + "," + phoneNumber + ",";
+    @Override
+    public String lineRepresentation() {
+        return employeeID + "," + Name + "," + Email + "," + Address + "," + phoneNumber + ",";
     }
-    
-    public String getEmployeeId() {
-    return employeeID;
-}
 
-     @Override
- public String getSearchKey() {
-        
+    public String getEmployeeId() {
         return employeeID;
     }
-   
-    
-    
-    
-    
-    
+
+    @Override
+    public String getSearchKey() {
+
+        return employeeID;
+    }
+
 }
-
-

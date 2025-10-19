@@ -25,7 +25,6 @@ public class AdminRole extends UserRole {
         
         EmployeeUser newEmployee = new EmployeeUser(employeeId, name, email, address,phoneNumber);
         database.insertRecord(newEmployee);
-        database.writeToFile();
         System.out.println("Employee added successfully: " + name);
     }
 
@@ -42,8 +41,7 @@ public class AdminRole extends UserRole {
     
     public void removeEmployee(String key) throws IOException {
         if (database.removeRecord(key)) {
-            database.writeToFile();
-            System.out.println("Employee with ID " + key + " removed successfully.");
+             System.out.println("Employee with ID " + key + " removed successfully.");
         } else {
             System.out.println("No employee found with ID: " + key);
         }
@@ -53,7 +51,7 @@ public class AdminRole extends UserRole {
     @Override
     public void logout() {
         try {
-            database.writeToFile();
+            database.saveToFile();
             System.out.println("Admin logged out. All data saved successfully.");
         } catch (IOException ex) {
             

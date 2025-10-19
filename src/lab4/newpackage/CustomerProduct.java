@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
  *
  * @author CYBER-TECH
  */
-public class CustomerProduct {
+public class CustomerProduct implements Item{
     private String customerSSN;
     private String productID;
     private LocalDate purchaseDate;

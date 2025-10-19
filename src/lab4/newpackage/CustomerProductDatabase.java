@@ -31,23 +31,6 @@ public class CustomerProductDatabase extends Database<CustomerProduct> {
         return cp;
     }
 
-    @Override
-    public String getKey(CustomerProduct record) {
-        return record.getSearchKey();
-    }
 
-    @Override
-    public String lineRepresentation(CustomerProduct record) {
-        return record.lineRepresentation();
-}
 
-    @Override
-    public String getSearchKey() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void logout() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }

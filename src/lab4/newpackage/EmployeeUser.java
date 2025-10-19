@@ -62,7 +62,7 @@ public class EmployeeUser implements Item {
 
     @Override
     public String lineRepresentation() {
-        return employeeID + "," + Name + "," + Email + "," + Address + "," + phoneNumber + ",";
+        return employeeID + "," + Name + "," + Email + "," + Address + "," + phoneNumber;
     }
 
     public String getEmployeeId() {

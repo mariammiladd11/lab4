@@ -15,7 +15,7 @@ import java.util.Scanner;
  *
  * @author CYBER-TECH
  */
-public class EmployeeUserDatabase {
+public class EmployeeUserDatabase  {
     
    private String filename;
    private ArrayList<EmployeeUser> records;  
@@ -25,6 +25,7 @@ public class EmployeeUserDatabase {
         records=new ArrayList<>();
     }
     
+   
     public void readFromFile() throws FileNotFoundException, IOException {    // bey read el line mn el file we yeb3at el line le create function
         
         FileReader fr = new FileReader(filename);
@@ -106,5 +107,21 @@ public class EmployeeUserDatabase {
 
     fw.close();
 }
+
+    public String getKey(EmployeeUser record) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public String lineRepresentation(EmployeeUser record) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public String getSearchKey() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void logout() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
 }

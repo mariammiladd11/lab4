@@ -11,7 +11,7 @@ package lab4.newpackage;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class AdminRole extends Database {
+public class AdminRole extends UserRole {
     private EmployeeUserDatabase database;
 
     public AdminRole() throws IOException {
@@ -60,24 +60,6 @@ public class AdminRole extends Database {
         }
     }
 
-    @Override
-    public Object createRecordFrom(String line) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public String getKey(Object record) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public String lineRepresentation(Object record) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public String getSearchKey() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    
 }
 

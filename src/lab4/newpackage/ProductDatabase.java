@@ -19,7 +19,7 @@ public class ProductDatabase extends Database<Product> {
 
     @Override
     public Product createRecordFrom(String line) {
-        System.out.println(line);
+        //System.out.println(line);
         String[] splitProduct = line.split(",");
         String id = splitProduct[0];
         String name = splitProduct[1];

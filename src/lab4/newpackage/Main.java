@@ -33,7 +33,7 @@ public class Main {
             System.out.print("Enter your choice: ");
             
             choice = sc.nextInt();
-            sc.nextLine(); // clear buffer
+            sc.nextLine(); 
 
             switch (choice) {
                 case 1:

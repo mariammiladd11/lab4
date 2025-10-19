@@ -58,11 +58,13 @@ public class Product implements Item{
         this.price = price;
     }
 
+    @Override
     public String lineRepresentation() {
         return productID + "," + productName + "," + manufacturerName + "," +
                supplierName + "," + quantity + "," + price;
     }
 
+    @Override
     public String getSearchKey() {
         return productID;
     }

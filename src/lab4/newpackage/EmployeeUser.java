@@ -10,7 +10,7 @@ import java.time.format.DateTimeFormatter;
  *
  * @author CYBER-TECH
  */
-public class EmployeeUser {
+public class EmployeeUser implements Item{
      private String employeeID;
     private String Name;
     private String Email;
@@ -65,6 +65,7 @@ public class EmployeeUser {
 
    
     
+     @Override
     public String lineRepresentation(){
         return employeeID+ "," + Name + "," + Email + "," + Address + "," + phoneNumber + ",";
     }
@@ -73,6 +74,7 @@ public class EmployeeUser {
     return employeeID;
 }
 
+     @Override
  public String getSearchKey() {
         
         return employeeID;

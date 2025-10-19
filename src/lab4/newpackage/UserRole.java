@@ -18,7 +18,7 @@ public abstract class UserRole {
     public String getRoleName() {
         return roleName;
     }
-
+  
     
     public abstract void logout();
 }

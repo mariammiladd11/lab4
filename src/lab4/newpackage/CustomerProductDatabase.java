@@ -1,11 +1,8 @@
+package lab4.newpackage;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import lab4.newpackage.CustomerProduct;
-import lab4.newpackage.Database;
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 
 /**
  *

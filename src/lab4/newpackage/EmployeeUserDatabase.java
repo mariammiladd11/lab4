@@ -4,7 +4,6 @@
  */
 package lab4.newpackage;
 
-import *;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
